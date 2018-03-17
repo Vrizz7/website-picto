@@ -6,6 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
 	<meta name="description" content="Share pictures with friends">
 	<meta name="keywords" content="picture, pictures, photo, photos">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<div id="container">
@@ -20,8 +21,24 @@
 				<input id="usrname" type="text" placeholder="Username">
 				<input id="pswd" type="password" placeholder="Password" >
 				<button id="logbtn" type="submit">Log in</button>
+				<span style="font-family: 'Catamaran', sans-serif; font-size: 16px; "><p id="alert"></p>
 			</div>
 		</div>
 	</div>
+
+<script>
+	$("#logbtn").click(function(){
+			var username = document.getElementById('usrname');
+			var password = document.getElementById('pswd');
+
+			if (username.value == "vrizz7" && password.value == "test") {
+				$("#loginwindow").slideToggle(500);
+				$("#loginwindow").delay(500).slideToggle(500);
+			}
+			else {
+				document.getElementById('alert').innerHTML = "Wrong login or password.";
+			}
+		});
+</script>
 </body>
 </html>
